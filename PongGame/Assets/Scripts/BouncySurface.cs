@@ -4,7 +4,7 @@ public class BouncySurface : MonoBehaviour
 {
     public float bounceStrength;
 
-    private void onCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Ball ball = collision.gameObject.GetComponent<Ball>();
         if (ball != null){

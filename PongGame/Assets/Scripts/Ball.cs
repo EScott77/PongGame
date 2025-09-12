@@ -3,7 +3,13 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public float speed = 200.0f;
+    public float baseSpeed = 5f;
+    public float currentSpeed{get; set; }
+
+
+
     private Rigidbody2D rb;
+    
 
     private void Awake()
     {
@@ -13,10 +19,19 @@ public class Ball : MonoBehaviour
 
     private void Start()
     {
+        ResetPosition();
         AddStartingForce();
     }
 
-    private void AddStartingForce()
+
+    public void ResetPosition(){
+        rb.position = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
+
+
+    }
+
+    public void AddStartingForce()
     {
         float x = Random.value < 0.5f ? -1f : 1f;
         float y = Random.value < 0.5f ? Random.Range(-1f, -0.5f) : Random.Range(0.5f, 1f);
@@ -30,5 +45,9 @@ public class Ball : MonoBehaviour
     public void AddForce( Vector2 force){
         rb.AddForce(force);
     }
+
+
+
+    
     
 }
