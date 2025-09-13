@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
     public float currentSpeed{get; set; }
 
 
+    public scoreScript score;
 
     private Rigidbody2D rb;
     
@@ -19,6 +20,8 @@ public class Ball : MonoBehaviour
 
     private void Start()
     {
+        score = GameObject.FindGameObjectWithTag("logic").GetComponent<scoreScript>();
+
         ResetPosition();
         AddStartingForce();
     }
@@ -44,6 +47,9 @@ public class Ball : MonoBehaviour
 
     public void AddForce( Vector2 force){
         rb.AddForce(force);
+    }
+    public void stopBall(){
+        gameObject.SetActive(false);
     }
 
 
