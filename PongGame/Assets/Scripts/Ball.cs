@@ -53,6 +53,16 @@ public class Ball : MonoBehaviour
     }
 
 
+    void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.CompareTag("Paddle")){
+            FindFirstObjectByType<PongSoundManager>().PlayPaddleHit();
+        }if (collision.gameObject.CompareTag("Wall")){
+            FindFirstObjectByType<PongSoundManager>().PlayWallHit();
+        }
+
+    }
+
+
 
     
     
