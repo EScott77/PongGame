@@ -17,7 +17,7 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-
+// method for restarting the round 
     private void Start()
     {
         score = GameObject.FindGameObjectWithTag("logic").GetComponent<scoreScript>();
@@ -34,6 +34,7 @@ public class Ball : MonoBehaviour
 
     }
 
+    // star of each round, ball moves at random range. new direction each round
     public void AddStartingForce()
     {
         float x = Random.value < 0.5f ? -1f : 1f;
@@ -44,14 +45,17 @@ public class Ball : MonoBehaviour
 
         rb.AddForce(direction *speed);
     }
-
+    //add force to object upon call 
     public void AddForce( Vector2 force){
         rb.AddForce(force);
     }
+    // method to stop ball from moving for when game ends
     public void stopBall(){
         gameObject.SetActive(false);
     }
 
+
+    // upon collision, play appropriate sound based off of object type
 
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("Paddle")){

@@ -18,6 +18,8 @@ public class P2 : Paddle
         // } else {
         //     direction = Vector2.zero;
 
+
+//sets player 2 scores to up and down arrow
         bool isPressingUp = Input.GetKey(KeyCode.UpArrow);
         bool isPressingDown = Input.GetKey(KeyCode.DownArrow);
         

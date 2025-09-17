@@ -18,6 +18,8 @@ public class P1 : Paddle
         // } else {
         //     direction = Vector2.zero;
 
+
+//sets player 1 keys to W and S
         bool isPressingUp = Input.GetKey(KeyCode.W);
         bool isPressingDown = Input.GetKey(KeyCode.S);
         

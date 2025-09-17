@@ -4,6 +4,7 @@ public class BouncySurface : MonoBehaviour
 {
     public float bounceStrength;
 
+    //function makes ball a reactive surface 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Ball ball = collision.gameObject.GetComponent<Ball>();
